@@ -141,44 +141,7 @@ Use the following step-by-step commands to push your project to a new, secure re
 
 ---
 
-## 6. Hosting Deployments
 
-### Vercel (Recommended, Free-Tier)
-1. Register or Log in at [Vercel](https://vercel.com).
-2. Click **Add New** and choose **Project**.
-3. Link your GitHub Account and select the code repository you committed above.
-4. Set Build Settings (automatically detected):
-   - **Framework Preset**: Vite
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-5. Config Environment Variable parameters:
-   - Expand **Environment Variables**
-   - Add Name: `GEMINI_API_KEY`
-   - Add Value: `YOUR_SECRET_API_KEY`
-6. Click **Deploy**. Your site will compile and be online to access.
 
-### Render (Free-Tier)
-1. Log into your account dashboard on [Render](https://render.com).
-2. Select **New** -> **Static Site**.
-3. Authenticate with GitHub and import your code repository.
-4. Set Config Rules:
-   - **Build Command**: `npm run build`
-   - **Publish Directory**: `dist`
-5. Go to the **Environment** tab inside your service dashboard:
-   - Click **Add Environment Variable**
-   - Name: `GEMINI_API_KEY`
-   - Value: `YOUR_SECRET_API_KEY`
-6. Click **Deploy Static Site** to initiate.
-
----
-
-## 7. License and Copyright Information
-
-This application is thoroughly designed to illustrate Google Gemini spatial parameters. The UI layout, custom animations, logic layers, color variables, and structures have been extensively reworked to be highly custom, modernized, and structurally unique. 
-
-We recommed applying an **MIT License** to this workspace since it is highly collaborative and relies on open-source libraries.
-
-### GitHub Repository Description
-For your GitHub project description card, you can use the following synopsis:
-
-> An interactive spatial reasoning dashboard for physical object mapping, bounding box coordinates, and coordinate system translation using Gemini and the @google/genai SDK.
+## 6. License and Copyright Information
+MIT License

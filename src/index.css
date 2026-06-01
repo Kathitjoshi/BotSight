@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght=0,400;0,700;1,400;1,700&display=swap");
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 13px;
+  background-color: var(--bg-color);
+  color: var(--text-color-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+:root {
+  --bg-color: #F4F4F6;
+  --accent-color: #2563EB;
+  --border-color: #E2E8F0;
+  --box-color: #FFFFFF;
+  --text-color-primary: #0F172A;
+  --text-color-secondary: #64748B;
+  --box-radius: 12px;
+  --input-color: #F8FAFC;
+  --neon-glow: rgba(37, 99, 235, 0.1);
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.dark {
+  --bg-color: #0A0A0C;
+  --accent-color: #3b82f6;
+  --border-color: #1E293B;
+  --box-color: #0F172A;
+  --text-color-primary: #F1F5F9;
+  --text-color-secondary: #94A3B8;
+  --input-color: #1E293B;
+  --neon-glow: rgba(59, 130, 246, 0.2);
+  color-scheme: dark;
+}
+
+input, select {
+  accent-color: var(--accent-color);
+}
+
+input[type="text"],
+textarea {
+  color: var(--text-color-primary);
+  border: 1px solid var(--border-color);
+  background-color: var(--input-color);
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--neon-glow);
+  outline: none;
+}
+
+.hide-box .bbox {
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.hide-box .bbox.reveal {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Custom interactive camera scanner animation */
+@keyframes scan {
+  0% { top: 0%; opacity: 0.1; }
+  50% { opacity: 0.8; }
+  100% { top: 100%; opacity: 0.1; }
+}
+
+.laser-scanner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  box-shadow: 0 0 10px var(--accent-color);
+  animation: scan 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Cybernetic overlay indicators */
+.reticle-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--accent-color);
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+.reticle-tl { top: -2px; left: -2px; border-top-width: 3px; border-left-width: 3px; }
+.reticle-tr { top: -2px; right: -2px; border-top-width: 3px; border-right-width: 3px; }
+.reticle-bl { bottom: -2px; left: -2px; border-bottom-width: 3px; border-left-width: 3px; }
+.reticle-br { bottom: -2px; right: -2px; border-bottom-width: 3px; border-right-width: 3px; }
+
+/* Dashboard Technical Grid */
+.tech-grid-bg {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+}
+.dark .tech-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+}
+
+.border-glow {
+  box-shadow: 0 0 15px var(--neon-glow);
+}
+
+/* Custom interactive buttons */
+button.cyber-btn {
+  background: var(--box-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--box-radius);
+  color: var(--text-color-primary);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button.cyber-btn:hover:not(:disabled) {
+  border-color: var(--accent-color);
+  background: var(--input-color);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px var(--neon-glow);
+}
+
+button.cyber-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button.cyber-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Point Indicators pulsing */
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.pulse-ring-effect {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  animation: pulse-ring 1.8s cubic-bezier(0.25, 0, 0, 1) infinite;
+  pointer-events: none;
+}

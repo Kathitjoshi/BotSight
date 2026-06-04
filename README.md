@@ -4,6 +4,9 @@ The Robotics Spatial Understanding Engine is a static, highly interactive Single
 
 ---
 
+<img width="2819" height="1513" alt="image" src="https://github.com/user-attachments/assets/42aadb78-6276-45d3-a7af-c8d0929a9b7b" />
+
+
 ## 1. Deep Dive Into Application Flow and Mechanics
 
 The application functions as a cybernetic feedback control loops divided into five serial stages:

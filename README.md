@@ -43,6 +43,9 @@ Overlays are rendered using high-fidelity vector graphics and CSS keyframe scan 
 
 ---
 
+<img width="1771" height="619" alt="botsight-architecture" src="https://github.com/user-attachments/assets/9ac37c1a-ef08-41fa-9781-f21c113642c0" />
+
+
 ## 2. Directory Structure
 
 ```text
